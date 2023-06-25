@@ -57,14 +57,14 @@ function App() {
         <Alert alert={alert} />
         <Routes>
           <Route
-            exact path="/"
+            exact path="/textutils/"
             element={
               <div className='container my-3'>
                 <TextForm showAlert={showAlert} heading="Enter the Text below to Analyze." themeColor={themeColor} />
               </div>
             } 
           />
-          <Route path="/about" element={<About />}/>
+          <Route path="/textutils/about" element={<About />}/>
         </Routes>
       </BrowserRouter>
 
