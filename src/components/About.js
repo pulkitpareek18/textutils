@@ -4,42 +4,21 @@ export default function About() {
   { document.title = "TextUtils - About" }
   return (
     <>
-      <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Accordion Item #1
-            </button>
-          </h2>
-          <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <h2 class="text-center mb-4">About TextUtils</h2>
+            <p>TextUtils is a <strong>powerful</strong> text editing utility that allows users to easily manipulate text in a variety of ways. With TextUtils, users can quickly convert text to <em>uppercase</em>, <em>lowercase</em>, <em>Pascal case</em>, <em>camel case</em>, <em>inverse case</em>, and <em>title case</em>.</p>
+
+            <p>Converting text to <strong>uppercase</strong> or <strong>lowercase</strong> is straightforward and simply involves changing all the letters in the text to their uppercase or lowercase equivalents. This can be useful when capitalization is important, such as when entering passwords or formatting text for titles.</p>
+
+            <p><em>Pascal case</em> and <em>camel case</em> are both used to format text in a specific way. <em>Pascal case</em> involves capitalizing the first letter of each word in the text, while <em>camel case</em> involves capitalizing the first letter of each word except the first word. These formats are often used in programming languages, and TextUtils makes it easy to convert text to either format.</p>
+
+            <p><em>Inverse case</em>, also known as <strong>alternating case</strong>, involves capitalizing every other letter in the text. This can be a fun and playful way to format text, and TextUtils makes it easy to apply this formatting to any text.</p>
+
+            <p><em>Title case</em> involves capitalizing the first letter of each word in the text, with the exception of articles, conjunctions, and prepositions. This is a common format for titles and headlines, and TextUtils makes it easy to apply this formatting to any text.</p>
+
+            <p>Overall, TextUtils is a versatile and <strong>powerful</strong> tool for manipulating text, and its various formatting options make it a useful utility for a wide range of applications.</p>            </div>
         </div>
       </div>
     </>
