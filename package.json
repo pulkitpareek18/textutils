@@ -1,4 +1,5 @@
 {
+  "homepage": "https://pulkitpareek18.github.io/textutils",
   "name": "texutils",
   "version": "0.1.0",
   "private": true,
@@ -13,10 +14,9 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://pulkitpareek18.github.io/textutils",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
