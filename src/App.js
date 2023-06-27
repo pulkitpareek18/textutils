@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About'
+import lightModeIcon from "./light_mode.svg"
+import darkModeIcon from "./dark_mode.svg"
 
 import {
   BrowserRouter,
@@ -14,19 +16,27 @@ import {
 function App() {
 
   const toggleTheme = () => {
-    let themeSlider = document.getElementById("themeSlider");
-    if (themeSlider.checked) {
-      document.documentElement.setAttribute("data-bs-theme", "dark")
-      document.getElementById("darkModeIcon").style.display = "none"
-      document.getElementById("lightModeIcon").style.display = "block"
-    } else {
-      document.documentElement.setAttribute("data-bs-theme", "light")
-      document.getElementById("darkModeIcon").style.display = "block"
-      document.getElementById("lightModeIcon").style.display = "none"
+    let themeIcon = document.getElementById("themeIcon")
+    let themeIconButton = document.getElementById("themeIconButton")
+    if(themeIcon.getAttribute("data-theme")==="light"){
+      setThemeIcon(lightModeIcon)
+      themeIconButton.classList.remove("btn-light","btn-dark")
+      themeIconButton.classList.add("btn-dark")
+      themeIconButton.title = "Enable Light Mode"
+      themeIcon.setAttribute("data-theme","dark")
+      document.documentElement.setAttribute("data-bs-theme","dark")
+    }else{
+      setThemeIcon(darkModeIcon)
+      themeIconButton.classList.remove("btn-dark","btn-light")
+      themeIconButton.classList.add("btn-light")
+      themeIconButton.title = "Enable Dark Mode"
+      themeIcon.setAttribute("data-theme","light")
+      document.documentElement.setAttribute("data-bs-theme","light")
     }
   }
 
   const [alert, setAlert] = useState(null)
+  const [themeIcon, setThemeIcon] = useState(darkModeIcon)
 
   const showAlert = (type, msg) => {
     setAlert({
@@ -53,7 +63,7 @@ function App() {
 
     <>
       <BrowserRouter>
-        <Navbar title="TextUtils" toggleTheme={toggleTheme} alert={alert} setThemeColor={setThemeColor} />
+        <Navbar title="TextUtils" themeIcon={themeIcon} toggleTheme={toggleTheme} alert={alert} setThemeColor={setThemeColor} />
         <Alert alert={alert} />
         <Routes>
           <Route

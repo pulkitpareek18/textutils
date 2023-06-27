@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 
 export default function TextForm(props) {
-     document.title = "TextUtils - Home" 
+    document.title = "TextUtils - Home" 
     const [text, setText] = useState("");
 
     const handleUpClick = () =>{
@@ -100,8 +100,6 @@ export default function TextForm(props) {
     }
 
     const handleCopy = () =>{
-        let textarea = document.getElementById("myBox")
-        textarea.select()
         navigator.clipboard.writeText(text)
         props.showAlert("success", "Copied to Clipboard!")
     }
@@ -123,22 +121,22 @@ export default function TextForm(props) {
     
   return (
     <>
-        <h1>{props.heading}</h1>
+        <h1 className='mb-3'>{props.heading}</h1>
         <div className="mb-3">
         <textarea value={text} className={`form-control bg-${props.themeColor.textAreaBackgroundColor}`}  onChange={handleOnChange} placeholder='Type Something Here...' id="myBox" rows="8"></textarea>
         </div>
 
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleUpClick}>UPPERCASE</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleLowClick}>lowercase</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleSentenceClick}>Sentence case</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleInverseClick}>InVeRsE CaSe / iNvErSe cAsE</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleTitleClick}>Title Case</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handlePascalClick}>PascalCase</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleCamelClick}>camelCase</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleSnakeClick}>snake_case</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleClearClick}>Clear Text</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleExtraSpaces}>Handle Extra Spaces</button>
-        <button className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleCopy}>Copy Text</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleUpClick}>UPPERCASE</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleLowClick}>lowercase</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleSentenceClick}>Sentence case</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleInverseClick}>InVeRsE CaSe / iNvErSe cAsE</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleTitleClick}>Title Case</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handlePascalClick}>PascalCase</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleCamelClick}>camelCase</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleSnakeClick}>snake_case</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleClearClick}>Clear Text</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleExtraSpaces}>Handle Extra Spaces</button>
+        <button disabled={text.length===0} className={`btn btn-${props.themeColor.btnClass} mx-1 mb-1`} onClick={handleCopy}>Copy Text</button>
     
 
         <div className="container my-3">
@@ -146,7 +144,11 @@ export default function TextForm(props) {
             <p>{calculateWords()} Words and {text.length} Characters</p>
             <p>{0.008*calculateWords()} Minutes Read</p>
             <h2>Preview</h2>
-            <p>{text !== "" ? text : "Type something in the above Text-Box to see it's preview here..."}</p>
+        </div>
+        <div className="container d-flex m-5 flex-wrap">
+            <pre style={{textWrap: "balance"}}>            
+                <p style={{fontFamily: 'Alkatra'}}>{text !== "" ? text : "Nothing to Preview..."}</p>
+            </pre>
         </div>
         
     </> 

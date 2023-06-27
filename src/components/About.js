@@ -4,10 +4,10 @@ export default function About() {
    document.title = "TextUtils - About" 
   return (
     <>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-10 mx-auto">
-            <h2 class="text-center mb-4">About TextUtils</h2>
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-md-10 mx-auto">
+            <h2 className="text-center mb-4">About TextUtils</h2>
             <p>TextUtils is a <strong>powerful</strong> text editing utility that allows users to easily manipulate text in a variety of ways. With TextUtils, users can quickly convert text to <em>uppercase</em>, <em>lowercase</em>, <em>Pascal case</em>, <em>camel case</em>, <em>inverse case</em>, and <em>title case</em>.</p>
 
             <p>Converting text to <strong>uppercase</strong> or <strong>lowercase</strong> is straightforward and simply involves changing all the letters in the text to their uppercase or lowercase equivalents. This can be useful when capitalization is important, such as when entering passwords or formatting text for titles.</p>
